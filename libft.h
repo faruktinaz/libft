@@ -6,7 +6,7 @@
 /*   By: ogenc <ogenc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 20:07:21 by ogenc             #+#    #+#             */
-/*   Updated: 2022/12/21 18:34:17 by ogenc            ###   ########.fr       */
+/*   Updated: 2022/12/22 14:38:09 by ogenc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
-char	**ft_split(char const *s, char c);
+// char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 void	*ft_calloc(size_t count, size_t size);
-// char	*ft_strnstr(const char *dizi, const char *alt, size_t len);
+char	*ft_strnstr(const char *dizi, const char *alt, size_t len);
 
 #endif
