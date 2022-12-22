@@ -6,43 +6,42 @@
 /*   By: ogenc <ogenc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 12:30:27 by ogenc             #+#    #+#             */
-/*   Updated: 2022/12/14 19:15:42 by ogenc            ###   ########.fr       */
+/*   Updated: 2022/12/22 17:15:06 by ogenc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	whitespaces(char *str, int *ptr_i)
+#include<stdio.h>
+
+int	ft_atoi(const char *str)
 {
-	int	count;
 	int	i;
-
-	i = 0;
-	count = 1;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	while (str[i] && (str[i] == '+' || str[i] == '-'))
-	{
-		if (str[i] == '-')
-			count *= -1;
-		i++;
-	}
-	*ptr_i = i;
-	return (count);
-}
-
-int	ft_atoi(char *str)
-{
 	int	sign;
 	int	result;
-	int	i;
 
+	i = 0;
+	sign = 1;
 	result = 0;
-	sign = whitespaces(str, &i);
-	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
+	if (str[i] == '\0')
+		return (0);
+	while ((str[i] >= 0 && str[i] <= 13) || str[i] == ' ')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		result *= 10;
-		result += str[i] - '0';
+		if (str[i] == '-')
+			sign = -1;
 		i++;
 	}
-	result *= sign;
-	return (result);
+	while (str[i] != '\0' && str[i] >= 48 && str[i] <= 57)
+	{
+		result = result * 10;
+		result += (str[i] - 48);
+		i++;
+	}
+	return (result * sign);
 }
+
+// int main()
+// {
+// 	const char str[] = "--42";
+// 	printf("%d",ft_atoi(str)); 
+// }

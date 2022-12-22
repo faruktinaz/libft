@@ -6,7 +6,7 @@
 #    By: ogenc <ogenc@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 22:54:12 by ogenc             #+#    #+#              #
-#    Updated: 2022/12/22 14:38:35 by ogenc            ###   ########.fr        #
+#    Updated: 2022/12/22 16:31:03 by ogenc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,6 @@ list=ft_isalpha.c \
 		ft_substr.c \
 		ft_strjoin.c \
 		ft_strtrim.c \
-		ft_strnstr.c \
 		ft_itoa.c \
 		ft_calloc.c \
 		#  ft_strnstr.c \

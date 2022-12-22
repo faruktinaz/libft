@@ -6,7 +6,7 @@
 /*   By: ogenc <ogenc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 18:10:32 by ogenc             #+#    #+#             */
-/*   Updated: 2022/12/22 14:35:53 by ogenc            ###   ########.fr       */
+/*   Updated: 2022/12/22 17:29:42 by ogenc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ static	int	numlen(int num)
 	int	count;
 
 	count = 0;
-	if (num == 0)
-		return (1);
-	if (num < 0)
+	if (num < 0 || num == 0)
 		count++;
 	while (num)
 	{
@@ -54,10 +52,7 @@ char	*ft_itoa(int n)
 	if (!number)
 		return (NULL);
 	if (n == 0)
-	{
 		number[0] = '0';
-		return (number);
-	}
 	else if (n < 0)
 	{
 		if (n == -2147483648)
@@ -72,3 +67,9 @@ char	*ft_itoa(int n)
 	itoanext(number, n, len);
 	return (number);
 }
+
+// int main()
+// {
+// 	char *sayi = 0;
+// 	printf("%s",ft_itoa(0));
+// }
