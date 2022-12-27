@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ogenc <ogenc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/17 13:51:53 by ogenc             #+#    #+#             */
-/*   Updated: 2022/12/27 18:37:15 by ogenc            ###   ########.fr       */
+/*   Created: 2022/12/24 16:35:21 by ogenc             #+#    #+#             */
+/*   Updated: 2022/12/24 16:36:13 by ogenc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_putstr_fd(char *s, int fd)
 {
-	char	*str;
-	size_t	len;
-
-	if (!s1 || !s2)
-		return (NULL);
-	len = ft_strlen(s1) + ft_strlen(s2);
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (str != NULL)
-	{
-		ft_strlcpy(str, s1, len + 1);
-		ft_strlcat(str, s2, len + 1);
-	}
-	return (str);
+	if (s)
+		write(fd, s, ft_strlen(s));
 }

@@ -6,7 +6,7 @@
 #    By: ogenc <ogenc@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 22:54:12 by ogenc             #+#    #+#              #
-#    Updated: 2022/12/22 16:31:03 by ogenc            ###   ########.fr        #
+#    Updated: 2022/12/27 19:16:23 by ogenc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ list=ft_isalpha.c \
 		ft_strrchr.c \
 		ft_strncmp.c \
 		ft_memchr.c \
+		ft_memcmp.c \
 		ft_atoi.c \
 		ft_strdup.c \
 		ft_substr.c \
@@ -35,8 +36,13 @@ list=ft_isalpha.c \
 		ft_strtrim.c \
 		ft_itoa.c \
 		ft_calloc.c \
-		#  ft_strnstr.c \
-		
+		ft_strmapi.c \
+		ft_striteri.c \
+		ft_putchar_fd.c \
+		ft_putstr_fd.c \
+		ft_putnbr_fd.c \
+		ft_putendl_fd.c \
+		ft_strnstr.c \
 
 
 OBJS = $(list:.c=.o)

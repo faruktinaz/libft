@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ogenc <ogenc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/28 12:30:27 by ogenc             #+#    #+#             */
-/*   Updated: 2022/12/27 15:48:29 by ogenc            ###   ########.fr       */
+/*   Created: 2022/12/27 18:38:35 by ogenc             #+#    #+#             */
+/*   Updated: 2022/12/27 18:47:55 by ogenc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include"libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	i;
-	int	sign;
-	int	result;
+	unsigned char	*src1;
+	unsigned char	*src2;
+	size_t			i;
 
+	src1 = (unsigned char *) s1;
+	src2 = (unsigned char *) s2;
 	i = 0;
-	sign = 1;
-	result = 0;
-	if (str[i] == '\0')
+	if (src1 == src2 || n == 0)
 		return (0);
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	while (i < n)
 	{
-		if (str[i] == '-')
-			sign = -1;
+		if (src1[i] != src2[i])
+			return (src1[i] - src2[i]);
 		i++;
 	}
-	while (str[i] != '\0' && (str[i] >= 48 && str[i] <= 57))
-	{
-		result = result * 10;
-		result += (str[i] - 48);
-		i++;
-	}
-	return (result * sign);
+	return (0);
 }

@@ -6,36 +6,31 @@
 /*   By: ogenc <ogenc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 18:04:06 by ogenc             #+#    #+#             */
-/*   Updated: 2022/12/22 15:03:45 by ogenc            ###   ########.fr       */
+/*   Updated: 2022/12/27 19:19:53 by ogenc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *str, const char *needle, size_t len)
 {
-	char	*big1;
-	char	*little1;
 	size_t	i;
-	size_t	x;
+	size_t	j;
 
+	if (needle[0] == '\0')
+		return ((char *)str);
 	i = 0;
-	little1 = (char *)little;
-	big1 = (char *)big;
-	x = 0;
-	while (big1 && x < len)
+	j = 0;
+	while (str[i] != '\0')
 	{
-		while (little1[i] != '\0')
+		j = 0;
+		while ((i + j) < len && str[i + j] == needle[j])
 		{
-			if (little1[i] == big1[x])
-			{
-				i++;
-				x++;
-			}
-			else
-				i = 0;
+			if (needle[j + 1] == '\0')
+				return ((char *) &str[i]);
+			j++;
 		}
-		big1++;
+		i++;
 	}
-	return ((char *)big + i);
+	return (NULL);
 }

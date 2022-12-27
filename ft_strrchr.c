@@ -6,7 +6,7 @@
 /*   By: ogenc <ogenc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 07:14:31 by ogenc             #+#    #+#             */
-/*   Updated: 2022/12/14 16:00:10 by ogenc            ###   ########.fr       */
+/*   Updated: 2022/12/27 19:28:40 by ogenc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		if (*s == (unsigned char)c)
 			ret = (char *)s;
-		++s;
+		s++;
 	}
-	if (!c)
+	if (!(unsigned char)c && !*s)
 		ret = ((char *)s);
 	return (ret);
 }
