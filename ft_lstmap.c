@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ogenc <ogenc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 18:14:11 by ogenc             #+#    #+#             */
-/*   Updated: 2022/12/29 19:06:33 by ogenc            ###   ########.fr       */
+/*   Created: 2022/12/29 17:20:30 by ogenc             #+#    #+#             */
+/*   Updated: 2022/12/29 17:38:28 by ogenc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	*str;
-	char	*src2;
-	size_t	i;
+	t_list	*new;
+	t_list	*tmp;
 
-	i = 0;
-	str = (char *)dst;
-	src2 = (char *)src;
-	if (!dst && !src)
-		return (0);
-	while (i < n)
+	new = 0;
+	while (lst)
 	{
-		str[i] = src2[i];
-		i++;
+		tmp = ft_lstnew(f(lst->content));
+		if (!tmp)
+		{
+			ft_lstclear(&new, del);
+			return (0);
+		}
+		ft_lstadd_back(&new, tmp);
+		lst = lst->next;
 	}
-	return (dst);
+	return (new);
 }

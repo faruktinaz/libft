@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ogenc <ogenc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/28 12:30:27 by ogenc             #+#    #+#             */
-/*   Updated: 2022/12/29 12:12:02 by ogenc            ###   ########.fr       */
+/*   Created: 2022/12/29 12:05:17 by ogenc             #+#    #+#             */
+/*   Updated: 2022/12/29 13:08:18 by ogenc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_lstsize(t_list *lst)
 {
 	int	i;
-	int	sign;
-	int	result;
 
 	i = 0;
-	sign = 1;
-	result = 0;
-	if (str[i] == '\0')
-		return (0);
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	while (lst != NULL)
 	{
-		if (str[i] == '-')
-			sign = -1;
 		i++;
+		lst = lst->next;
 	}
-	while (str[i] != '\0' && (str[i] >= 48 && str[i] <= 57))
-	{
-		result = result * 10;
-		result += (str[i] - 48);
-		i++;
-	}
-	return (result * sign);
+	return (i);
 }
+
+// int main()
+// {
+// 	t_list	*insan;
+// 	insan = malloc(sizeof(t_list));
+// 	insan->content = "deneme";
+// 	insan->next = malloc(sizeof(t_list));
+// 	insan->next->content = "araba";
+// 	printf("%d",ft_lstsize(insan));
+// }

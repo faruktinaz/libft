@@ -6,7 +6,7 @@
 /*   By: ogenc <ogenc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 18:42:24 by ogenc             #+#    #+#             */
-/*   Updated: 2022/12/14 19:08:17 by ogenc            ###   ########.fr       */
+/*   Updated: 2022/12/28 08:01:45 by ogenc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(const char *s)
 
 	i = 0;
 	str = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (str == NULL)
+	if (!str)
 		return (NULL);
 	while (*s)
 	{

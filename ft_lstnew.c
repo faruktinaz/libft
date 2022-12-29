@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ogenc <ogenc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 18:14:11 by ogenc             #+#    #+#             */
-/*   Updated: 2022/12/29 19:06:33 by ogenc            ###   ########.fr       */
+/*   Created: 2022/12/28 13:07:38 by ogenc             #+#    #+#             */
+/*   Updated: 2022/12/28 14:44:08 by ogenc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	char	*str;
-	char	*src2;
-	size_t	i;
+	t_list	*lst;
 
-	i = 0;
-	str = (char *)dst;
-	src2 = (char *)src;
-	if (!dst && !src)
-		return (0);
-	while (i < n)
-	{
-		str[i] = src2[i];
-		i++;
-	}
-	return (dst);
+	lst = malloc(sizeof(t_list));
+	if (!lst)
+		return (NULL);
+	lst->content = content;
+	lst->next = NULL;
+	return (lst);
 }
