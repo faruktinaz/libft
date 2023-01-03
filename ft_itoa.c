@@ -6,12 +6,11 @@
 /*   By: ogenc <ogenc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 18:10:32 by ogenc             #+#    #+#             */
-/*   Updated: 2022/12/22 17:29:42 by ogenc            ###   ########.fr       */
+/*   Updated: 2023/01/02 15:05:17 by ogenc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include<stdio.h>
 
 static	int	numlen(int num)
 {
@@ -67,9 +66,3 @@ char	*ft_itoa(int n)
 	itoanext(number, n, len);
 	return (number);
 }
-
-// int main()
-// {
-// 	char *sayi = 0;
-// 	printf("%s",ft_itoa(0));
-// }

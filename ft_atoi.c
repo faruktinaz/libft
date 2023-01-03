@@ -6,11 +6,11 @@
 /*   By: ogenc <ogenc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 12:30:27 by ogenc             #+#    #+#             */
-/*   Updated: 2022/12/29 12:12:02 by ogenc            ###   ########.fr       */
+/*   Updated: 2023/01/02 15:05:33 by ogenc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include"libft.h"
 
 int	ft_atoi(const char *str)
 {

@@ -6,7 +6,7 @@
 #    By: ogenc <ogenc@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 22:54:12 by ogenc             #+#    #+#              #
-#    Updated: 2022/12/29 18:57:24 by ogenc            ###   ########.fr        #
+#    Updated: 2023/01/02 15:16:17 by ogenc            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,8 +56,7 @@ bonuslist = ft_lstnew.c 		\
 			ft_lstadd_back.c 	\
 			ft_lstdelone.c 		\
 			ft_lstclear.c 		\
-			ft_lstiter.c 		\
-			ft_lstmap.c
+			ft_lstiter.c
 
 OBJS = $(list:.c=.o)
 bonusobj = $(bonuslist:.c=.o)
