@@ -64,16 +64,22 @@ Bu denilene bir örnek verelim:
 int main()
 
 {
-char dst[] = "merhaba dünya";
+char str[] = "aabbcc";
 
-printf("%s\n",ft_memcpy(dst,dst+3,4));
-printf("%s",ft_memmove(dst,dst+3,4));
+ft_memcpy(str + 2, str , 4);
 
+printf("%s\n", str);
+
+char str2[] = "aabbcc";
+
+ft_memmove(str2 + 2 , str2, 4);
+
+printf("%s", str2);
 }
 ```
 bu kodun çıktısı:
-			habaaba dünya
-			aabaaba dünya
+			aaaaaa
+			aaaabb
 olur.
 
 memcpy ve memmove fonksiyonları, bir bellek alanının içeriğini başka bir bellek alanına kopyalamak için kullanılırlar. Ancak, bu iki fonksiyon arasında önemli bir fark vardır:
